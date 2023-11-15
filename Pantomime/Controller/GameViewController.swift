@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController, UITextViewDelegate {
+class GameViewController: UIViewController {
     
     @IBOutlet weak var roundNumberLabel: UILabel!
     @IBOutlet weak var gameTableView: UITableView!
@@ -27,10 +27,10 @@ class GameViewController: UIViewController, UITextViewDelegate {
     var groupName = ""
     var groupNameArray = [String]()
     var scoreArray = [Int]()
-    var scoreCurrentIndex = 0
-    var groupCurrentIndex = 0
+    var currentIndex = 0
     var scoreResult = 0
     var gameFinish = false
+    var gameTurnImage = ""
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -38,7 +38,7 @@ class GameViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         startAgainButton.isHidden = true
         celebrateImageGif.isHidden = true
         winnerNameLabel.isHidden = true
@@ -70,24 +70,28 @@ class GameViewController: UIViewController, UITextViewDelegate {
             startButton.isHidden = true
             gameFinish = true
         }
-
+        
         if GameViewController.currentIndexFlag >= 0 {
             
             scoreResult = Score_NewRoundNumberDelegate?.setScoreNumber() ?? 0
-            scoreArray[scoreCurrentIndex] = scoreArray[scoreCurrentIndex] + scoreResult
-            let indexPath = IndexPath(row: scoreCurrentIndex, section: 0)
-            gameTableView.reloadRows(at: [indexPath], with: .fade)
-            scoreCurrentIndex += 1
-            if scoreCurrentIndex >= groupNameArray.count {
-                scoreCurrentIndex = 0
+            scoreArray[currentIndex] = scoreArray[currentIndex] + scoreResult
+            
+            let indexPath = IndexPath(row: currentIndex, section: 0)
+            currentIndex += 1
+            if currentIndex >= groupNameArray.count {
+                currentIndex = 0
             }
+            
+            let nextIndexPath = IndexPath(row: currentIndex, section: 0)
+            gameTurnImage = "star.fill"
+            gameTableView.reloadRows(at: [indexPath, nextIndexPath], with: .fade)
             
             if gameFinish {
                 let largestScoreNumber = scoreArray.max()
                 let indexLargestScoreNumber = scoreArray.firstIndex(of: largestScoreNumber!)
                 let countOfLargestNumber = scoreArray.filter { $0 == largestScoreNumber }.count
                 GameViewController.currentIndexFlag = -1
-
+                
                 if countOfLargestNumber > 1 {
                     winnerNameLabel.text = "Game equalised"
                 } else {
@@ -127,7 +131,11 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.groupNameTitleLabel.text = groupNameArray[indexPath.row]
         cell.groupScoreTitleLabel.text = String (scoreArray[indexPath.row])
-        
+        if indexPath.row == currentIndex {
+            cell.groupTurnImage.image = UIImage(systemName: gameTurnImage)
+        } else {
+            cell.groupTurnImage.image = nil
+        }
         return cell
     }
 }

@@ -10,5 +10,6 @@ import UIKit
 class TeamTableViewCell: UITableViewCell {
     
     @IBOutlet weak var groupNameTitleLabel: UILabel!
+    @IBOutlet weak var groupTurnImage: UIImageView!
     @IBOutlet weak var groupScoreTitleLabel: UILabel!
 }
