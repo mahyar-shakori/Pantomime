@@ -9,6 +9,6 @@ import UIKit
 
 class TeamTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var groupNameTitleLabel: UITextView!
+    @IBOutlet weak var groupNameTitleLabel: UILabel!
     @IBOutlet weak var groupScoreTitleLabel: UILabel!
 }

@@ -41,6 +41,8 @@ class HomeViewController: UIViewController, UITextViewDelegate {
 }
 
 
+
+// var dataSource: [String] = ["Random", "+18", "Animal", "Object", "Food", "Football", "Sport", "Movie", "Job", "Place", "Tech", "Celebrity", "Music", "Book", "Country City", "Poem", "Proverb", "Proverb 20 Score"]
 //device size, dataBase, language
 
-// group winner, emtiaz
+// group change name

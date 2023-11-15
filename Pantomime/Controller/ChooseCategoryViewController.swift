@@ -12,8 +12,7 @@ protocol CategoryNameDelegate{
 }
 
 class ChooseCategoryViewController: UIViewController {
-    
-//    var dataSource: [String] = ["Random", "+18", "Animal", "Object", "Food", "Football", "Sport", "Movie", "Job", "Place", "Tech", "Celebrity", "Music", "Book", "Country City", "Poem", "Proverb", "Proverb 20 Score"]
+
     var dataSource: [String] = ["رندم", "+18", "حیوان", "اشیا", "غذا", "فوتبال", "ورزشی", "فیلم سریال", "شغل", "اماکن", "تکنولوژی", "سلبریتی", "موزیک", "کتاب", "شهر کشور", "مشاهیر", "عمومی", "ضرب المثل"]
     var categoryName = ""
     
