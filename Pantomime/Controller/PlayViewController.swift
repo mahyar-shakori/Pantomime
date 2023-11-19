@@ -57,7 +57,7 @@ class PlayViewController: UIViewController {
         } else {
             categoryRandomArray = swearWords + animals + foods + objects + countriesAndCities + tech + Places + jobs + football + sports + movies + proverbs
         }
-        ["Random", "+18", "Animal", "Object", "Food", "Football", "Sport", "Movie", "Job", "Place", "Tech", "Country City", "Proverb"]
+        
         switch delegate?.category() {
         case "Random":
             randomWordLabel.text = categoryRandomArray.randomElement()!
