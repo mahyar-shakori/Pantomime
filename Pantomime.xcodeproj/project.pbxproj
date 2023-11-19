@@ -21,6 +21,8 @@
 		4A7D2E8D2B036C580053CFAD /* CelebGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4A7D2E8C2B036C570053CFAD /* CelebGif.gif */; };
 		4A7D2E902B0388EE0053CFAD /* Extensino.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D2E8F2B0388EE0053CFAD /* Extensino.swift */; };
 		4A7D2E922B0389D40053CFAD /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7D2E912B0389D40053CFAD /* IntroViewController.swift */; };
+		4AFF1EF82B09E9F800C1817B /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF1EF72B09E9F800C1817B /* Words.swift */; };
+		4AFF1EFA2B09FDC700C1817B /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFF1EF92B09FDC700C1817B /* LayoutConstraint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		4A7D2E8C2B036C570053CFAD /* CelebGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CelebGif.gif; sourceTree = "<group>"; };
 		4A7D2E8F2B0388EE0053CFAD /* Extensino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensino.swift; sourceTree = "<group>"; };
 		4A7D2E912B0389D40053CFAD /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4AFF1EF72B09E9F800C1817B /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
+		4AFF1EF92B09FDC700C1817B /* LayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		3ED90AEE29F2EE970045C138 /* Pantomime */ = {
 			isa = PBXGroup;
 			children = (
+				4AFF1EF42B09E7E300C1817B /* Model */,
 				4A56A1712B0226DC007C67C8 /* View */,
 				4A56A1722B0226E8007C67C8 /* Controller */,
 				4A56A1732B0226FC007C67C8 /* Cell */,
@@ -91,6 +96,7 @@
 			children = (
 				3ED90AF529F2EE970045C138 /* Main.storyboard */,
 				3ED90AFA29F2EE9A0045C138 /* LaunchScreen.storyboard */,
+				4AFF1EF92B09FDC700C1817B /* LayoutConstraint.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +129,14 @@
 				4A7D2E8F2B0388EE0053CFAD /* Extensino.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		4AFF1EF42B09E7E300C1817B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AFF1EF72B09E9F800C1817B /* Words.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E1AB70E539E7CBC7127BFEC3 /* Frameworks */ = {
@@ -241,6 +255,8 @@
 				3ED90B1029F3D9160045C138 /* TeamTableViewCell.swift in Sources */,
 				3ED90B0629F3D6580045C138 /* CreateGameViewController.swift in Sources */,
 				3ED90B0A29F3D69B0045C138 /* PlayViewController.swift in Sources */,
+				4AFF1EFA2B09FDC700C1817B /* LayoutConstraint.swift in Sources */,
+				4AFF1EF82B09E9F800C1817B /* Words.swift in Sources */,
 				3ED90B0829F3D6810045C138 /* GameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

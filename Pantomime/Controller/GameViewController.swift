@@ -138,4 +138,27 @@ extension GameViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let alertController = UIAlertController(title: "Edit Group Name", message: "Enter new name", preferredStyle: .alert)
+        
+        alertController.addTextField { textField in
+            textField.placeholder = "New name"
+        }
+        
+        let confirmAction = UIAlertAction(title: "Confirm", style: .default) { [weak self] _ in
+            if let newName = alertController.textFields?.first?.text, !newName.isEmpty {
+                self?.groupNameArray[indexPath.row] = newName
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alertController, animated: true) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
 }

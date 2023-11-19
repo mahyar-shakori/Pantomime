@@ -12,8 +12,9 @@ protocol CategoryNameDelegate{
 }
 
 class ChooseCategoryViewController: UIViewController {
-
-    var dataSource: [String] = ["رندم", "+18", "حیوان", "اشیا", "غذا", "فوتبال", "ورزشی", "فیلم سریال", "شغل", "اماکن", "تکنولوژی", "سلبریتی", "موزیک", "کتاب", "شهر کشور", "مشاهیر", "عمومی", "ضرب المثل"]
+    
+    var dataSource: [String] = ["Random", "+18", "Animal", "Object", "Food", "Football", "Sport", "Movie", "Job", "Place", "Tech", "Country City", "Proverb"]
+    
     var categoryName = ""
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -50,17 +51,16 @@ extension ChooseCategoryViewController: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let alert = UIAlertController(title: "Play!", message: "Are you ready to play in the \(dataSource[indexPath.row]) category?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {  (alertAction) in
-        }))
-        
-        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {(alertAction) in
-            
+        alert.addAction(UIAlertAction(title: "Yes", style: .cancel, handler: {  (alertAction) in
             self.categoryName = self.dataSource[indexPath.row]
             
             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Play") as! PlayViewController
             vc.modalPresentationStyle = .fullScreen
             vc.delegate = self
             self.show(vc, sender: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .destructive, handler: {(alertAction) in
         }))
         self.present(alert, animated: true)
     }
